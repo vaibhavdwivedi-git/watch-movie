@@ -15,14 +15,13 @@ function App() {
 
 
   useEffect(()=>{
-    searchMovies("Shrek");
+    searchMovies("ice age");
   },[]);
 
 
   async function searchMovies(title){
     const response = await fetch(`${API_URL}&s=${title}`);
     const data = await response.json();
-    console.log(data);
     setMovies(data.Search);
   }
   
